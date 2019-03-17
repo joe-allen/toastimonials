@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>toastimonial</title>
-  <link rel="stylesheet" href="./scss/main.scss">
+  <link rel="stylesheet" href="main.css">
 
 </head>
 <body>
@@ -64,8 +64,8 @@
 
     // set toastimonial parameters
     var toastimonialParams = {
-      "min"       :    3,     // minimun seconds between html toasts
-      "max"       :    12,    // maximum seconds between html toasts
+      "min"       :    1,     // minimun seconds between html toasts
+      "max"       :    8,     // maximum seconds between html toasts
       "maxToasts" :    3,     // maximum seconds between html toasts
     }
 
@@ -73,6 +73,6 @@
       toastimonial: [true, toastimonialParams]    // type: array
     }
   </script>
-  <script src="main.js"></script>
+  <script src="main.js" async modules></script>
 </body>
 </html>
