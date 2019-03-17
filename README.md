@@ -2,7 +2,7 @@
 
 Built w/ HTML, SCSS (compiled using PostCSS & Browserlist), Javasctipt (ES6 compiled using Babel).
 
-## To Use:
+## TO USE:
 
 1. Clone repo
 2. Add element:
@@ -44,6 +44,6 @@ Include script:
 - [ ] Create pricing stucture
 - [ ] Build admin platform for users
 
-## Questions:
+## QUESTIONS:
 
 ## GENERAL
