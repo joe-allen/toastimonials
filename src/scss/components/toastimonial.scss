@@ -1,0 +1,248 @@
+@import '../variables.scss';
+
+// header, nav
+nav {
+  justify-content: flex-end;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+    width: 100%;
+    height: 60px;
+
+    li:first-child {
+      margin-right: auto;
+      margin-left: -20px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-right: 20px;
+      color: rebeccapurple;
+      cursor: pointer;
+    }
+    li::before {
+      content: '';
+      height: 6px;
+      width: 0;
+      background-color: transparent;
+      top: 0;
+      transition: 200ms;
+      position: absolute;
+    }
+    li:hover::before {
+      height: 6px;
+      width: 5%;
+      max-width: 60px;
+      background-color: rebeccapurple;
+    }
+  }
+}
+// end header, nav
+
+// toastimonials
+$shadow: 2px 2px 24px rgba(0,0,0,.125);
+$container-height: 70px;
+$container-width_thumbnail: 70px;
+$max-width_container: 900px;
+$bg-color: transparent;
+$border: 2px solid rebeccapurple;
+$b-radius: 4px;
+$b-r-full: 50%;
+$rel: relative;
+$width: 100%;
+
+%container {
+  max-height: $container-height;
+  border-radius: $b-radius;
+  border: $border;
+  position: $rel;
+  overflow: hidden;
+  font-family: $font-mont;
+}
+.toastimonials--container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 0 20px 0 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+[class*='toastimonial--container'] {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+[class*='toastimonial--container']:not(:first-of-type) {
+  margin-bottom: 20px;
+}
+.toastimonial__map--container {
+  // display: none;
+
+  @extend %container;
+  margin-right: .5rem;
+
+  .toastimonial__map--wrapper {
+    background-color: $bg-color;
+    display: flex;
+    justify-content: center;
+    min-height: $container-height;
+    align-items: center;
+  }
+  img {
+    border-radius: $b-radius;
+    box-shadow: $shadow;
+    align-self: center;
+    height: $container-height;
+    width: 100%;
+    object-fit: cover;
+    max-width: $container-width_thumbnail;
+    transition: 500ms;
+  }
+  img:hover {
+    animation: toastimonial__map;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes toastimonial__map {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(4);
+    }
+  }
+}
+.toastimonial__avatar--container {
+  @extend %container;
+  margin-right: .5rem;
+
+  .toastimonial__avatar--wrapper {
+    display: flex;
+    justify-content: center;
+    min-height: $container-height;
+    align-items: center;
+  }
+  img {
+    border-radius: $b-radius;
+    box-shadow: $shadow;
+    align-self: center;
+    height: $container-height;
+    width: 100%;
+    object-fit: cover;
+    max-width: $container-width_thumbnail;
+    transition: 500ms;
+  }
+  img:hover {
+    animation: toastimonial__avatar;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes toastimonial__avatar {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+}
+.toastimonial__info--container {
+  @extend %container;
+  font-family: $font-mont;
+  background-color: $bg-color;
+  box-shadow: $shadow;
+  display: flex;
+  justify-content: center;
+  min-height: $container-height;
+  align-items: center;
+  overflow: scroll;
+
+  padding: 1.25rem;
+  font-size: .65rem;
+  color: #707070;
+
+  strong {
+    font-weight: 900;
+  }
+}
+.toastimonial__link {
+  text-transform: uppercase;
+  color: rebeccapurple;
+  text-decoration: none;
+}
+.toastimonial__close--container {}
+
+@media screen and (min-width: 540px) {
+  .toastimonials--container {
+    max-width: $max-width_container;
+  }
+  [class*='toastimonial--container'] {
+    margin-left: -$max-width_container;
+    animation: toastimonial--container;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    opacity: 0;
+  }
+
+  @keyframes toastimonial--container {
+    0% {
+      filter: blur(10px);
+      margin-left: -$max-width_container;
+      opacity: 0;
+    }
+    50% {
+      margin-left: 40px;
+      opacity: 1;
+    }
+    100% {
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+}
+@media screen and (max-width: 540px) {
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 0 0;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      list-style-type: none;
+      width: 100%;
+      padding: 0;
+      margin: 20px 0 0;
+
+      li:first-child {
+        margin: 0 0 15px;
+      }
+      li {
+        margin: 15px 0;
+      }
+    }
+  }
+  [class*='toastimonial--container'] {
+    max-height: 100px;
+  }
+  .toastimonial__info--container {
+    min-height: $container-height+20px;
+  }
+  .toastimonial__map--container,
+  .toastimonial__avatar--container {
+    display: none;
+  }
+}
+// end toastimonials
