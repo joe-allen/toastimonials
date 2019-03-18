@@ -2,7 +2,6 @@ import Toastimonial from './components/Toastimonial';
 
 class App {
   constructor(components) {
-    console.log('components: ', components);
     this.toastimonial = components.toastimonial;
   }
   init() {
