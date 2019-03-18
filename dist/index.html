@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>toastimonial</title>
+  <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+  <style>
+    /* feel free to customize toastimonials */
+    @media screen and (min-width: 540px) {
+      .toastimonial__link {
+        color: red;
+        float: right;
+      }
+    }
+  </style>
+
+  <header>
+    <nav>
+      <ul>
+        <li>TOASTIMONIALS</li>
+        <li>Pricing</li>
+        <li>Documentation</li>
+      </ul>
+    </nav>
+  </header>
+
+  <article>
+
+    <!-- example html -->
+    <!-- <div class="toastimonials--container">
+      <div class="toastimonial--container">
+        <div class="toastimonial__map--container">
+          <div class="toastimonial__map--wrapper">
+            <img src="http://joomly.net/frontend/web/images/googlemap/map.png" alt="map">
+          </div>
+        </div>
+        <div class="toastimonial__avatar--container">
+          <div class="toastimonial__avatar--wrapper">
+            <img src="https://avatars0.githubusercontent.com/u/18443374?s=460&v=4" alt="me">
+          </div>
+        </div>
+        <div class="toastimonial__info--container">
+          <div>
+            <p><strong><u>1. LOREM IPSUM</u></strong>: dolor sit amet consectetur, <em>adipisicing elit</em>.nte, earum! Iusto unde ab incidunt!</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.nte, Lorem ipsum dolor sit amet consectetur, adipisicing elit.nte, Lorem ipsum dolor sit amet consectetur, adipisicing elit.nte, Lorem ipsum dolor sit amet consectetur, adipisicing elit.nte, earum! <strong>Iusto unde</strong> ab incidunt!</p>
+          </div>
+        </div>
+        <div class="toastimonial__close--container"></div>
+      </div>
+    </div> -->
+    <!-- end example html -->
+
+    <div class="toastimonials--container"></div>
+
+  </article>
+
+  <script>
+
+    // set toastimonial parameters
+    var toastimonialParams = {
+      "min"       :    1,     // minimun seconds between html toasts
+      "max"       :    8,     // maximum seconds between html toasts
+      "maxToasts" :    3,     // maximum seconds between html toasts
+    }
+
+    var lf_components = {
+      toastimonial: [true, toastimonialParams]    // type: array
+    }
+  </script>
+  <script src="main.js" async modules></script>
+</body>
+</html>
